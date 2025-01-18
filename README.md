@@ -87,11 +87,11 @@ Finalmente, se utilizó la herramienta *auto-py-to-exe* para permitir generar un
     **Contenido de la clase SimpleTextEditor:**
 
     - **Constructor (__init__):** Nuestro constructor tiene en cuenta principalmente que recibirá como parámetro la ventana principal de nuestra aplicación, es por ello que dentro del propio constructor además se crea el área de edición del texto, la cual se muestra directamente en nuestra aplicación con las proporciones correctas. Además, se crea la propiedad **current_open_file**, para que cuando se abra o almacene un archivo, siempre sepa con cuál archivo se está trabajando para ser de apoyo al realizar los cambios cuando se quieran almacenar.
-    </br>
+
     - **Método new_file:** El método **new_file** únicamente se encarga de limpiar toda la entrada de texto que visualiza el usuario y reasignar nuestra propiedad **current_open_file** a una cadena vacía, para que al querer almacenarlo pregunte la información para saber con qué nuevo archivo se trabajara.
-    </br>
+
     - **Método open_file:** Este método inicia trabajando con el módulo **filedialog** de tkinter. Primeramente, se utiliza el método *askopenfilename()* para solicitar al usuario el archivo que quiere abrir, si es seleccionado uno se almacenará la ruta absoluta del archivo y se carga el contenido en el widget **Text** con el método **insert**, si no se selecciona algún archivo el método no retornará nada y por ende sale de la función.
-    </br>
+
     - **Método save_file:** Este método utiliza la propiedad **current_open_file**, donde si se ha abierto un archivo, sabrá con qué archivo está trabajando y automáticamente almacenará el contenido, pero si esta propiedad está vacía quiere decir que es un archivo nuevo, por lo que con uso de **filedialog** y el método **asksaveasfilename()** solicita al usuario la ruta y el nombre de como se almacenará, de ser proporcionada la información almacenará el archivo, de lo contrario saldrá de la función.
-    </br>
+
     - **Método quit_confirm:** Este método utiliza el módulo **messagebox** de tkinter, donde se utiliza el método **askokcancel()**, donde el usuario decide si realmente quiere salir de la aplicación o no, de presionar **ok** el programa recibe un **True** que se verifica con un condicional y destruirá la sesión o ventana de la aplicación, cerrándola automáticamente. De lo contrario su ejecución seguirá igual.
